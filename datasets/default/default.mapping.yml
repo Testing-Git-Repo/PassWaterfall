@@ -5,73 +5,122 @@
 # .load.yml file and re-capturing:
 #
 #  https://cumulusci.readthedocs.io/en/stable/data.html#extracting-and-loading-sample-datasets
-Insert DandBCompany:
-  sf_object: DandBCompany
-  table: DandBCompany
-  fields:
-  - DunsNumber
-  - Name
 Insert OperatingHours:
   sf_object: OperatingHours
   table: OperatingHours
   fields:
   - Name
+  - Description
   - TimeZone
-Insert Account:
-  sf_object: Account
-  table: Account
+Insert DandBCompany:
+  sf_object: DandBCompany
+  table: DandBCompany
   fields:
   - Name
-  - Type
-  - BillingStreet
-  - BillingCity
-  - BillingState
-  - BillingPostalCode
-  - BillingCountry
-  - BillingLatitude
-  - BillingLongitude
-  - BillingGeocodeAccuracy
-  - ShippingStreet
-  - ShippingCity
-  - ShippingState
-  - ShippingPostalCode
-  - ShippingCountry
-  - ShippingLatitude
-  - ShippingLongitude
-  - ShippingGeocodeAccuracy
+  - DunsNumber
+  - Street
+  - City
+  - State
+  - PostalCode
+  - Country
+  - GeocodeAccuracyStandard
   - Phone
   - Fax
-  - AccountNumber
-  - Website
-  - Sic
-  - Industry
-  - AnnualRevenue
-  - NumberOfEmployees
-  - Ownership
-  - TickerSymbol
-  - Description
-  - Rating
-  - Site
-  - Jigsaw
-  - CleanStatus
-  - AccountSource
-  - DunsNumber
-  - Tradestyle
-  - NaicsCode
-  - NaicsDesc
+  - CountryAccessCode
+  - PublicIndicator
+  - StockSymbol
+  - StockExchange
+  - SalesVolume
+  - URL
+  - OutOfBusiness
+  - EmployeesTotal
+  - FipsMsaCode
+  - FipsMsaDesc
+  - TradeStyle1
   - YearStarted
-  - SicDesc
-  lookups:
-    ParentId:
-      table:
-      - Account
-      key_field: ParentId
-      after: Insert Account
-    DandbCompanyId:
-      table:
-      - DandBCompany
-      key_field: DandbCompanyId
-    OperatingHoursId:
-      table:
-      - OperatingHours
-      key_field: OperatingHoursId
+  - MailingStreet
+  - MailingCity
+  - MailingState
+  - MailingPostalCode
+  - MailingCountry
+  - MailingGeocodeAccuracy
+  - Latitude
+  - Longitude
+  - PrimarySic
+  - PrimarySicDesc
+  - SecondSic
+  - SecondSicDesc
+  - ThirdSic
+  - ThirdSicDesc
+  - FourthSic
+  - FourthSicDesc
+  - FifthSic
+  - FifthSicDesc
+  - SixthSic
+  - SixthSicDesc
+  - PrimaryNaics
+  - PrimaryNaicsDesc
+  - SecondNaics
+  - SecondNaicsDesc
+  - ThirdNaics
+  - ThirdNaicsDesc
+  - FourthNaics
+  - FourthNaicsDesc
+  - FifthNaics
+  - FifthNaicsDesc
+  - SixthNaics
+  - SixthNaicsDesc
+  - OwnOrRent
+  - EmployeesHere
+  - EmployeesHereReliability
+  - SalesVolumeReliability
+  - CurrencyCode
+  - LegalStatus
+  - GlobalUltimateTotalEmployees
+  - EmployeesTotalReliability
+  - MinorityOwned
+  - WomenOwned
+  - SmallBusiness
+  - MarketingSegmentationCluster
+  - ImportExportAgent
+  - Subsidiary
+  - TradeStyle2
+  - TradeStyle3
+  - TradeStyle4
+  - TradeStyle5
+  - NationalId
+  - NationalIdType
+  - UsTaxId
+  - GeoCodeAccuracy
+  - FamilyMembers
+  - MarketingPreScreen
+  - GlobalUltimateDunsNumber
+  - GlobalUltimateBusinessName
+  - ParentOrHqDunsNumber
+  - ParentOrHqBusinessName
+  - DomesticUltimateDunsNumber
+  - DomesticUltimateBusinessName
+  - LocationStatus
+  - CompanyCurrencyIsoCode
+  - Description
+  - FortuneRank
+  - IncludedInSnP500
+  - PremisesMeasure
+  - PremisesMeasureReliability
+  - PremisesMeasureUnit
+  - EmployeeQuantityGrowthRate
+  - SalesTurnoverGrowthRate
+  - PrimarySic8
+  - PrimarySic8Desc
+  - SecondSic8
+  - SecondSic8Desc
+  - ThirdSic8
+  - ThirdSic8Desc
+  - FourthSic8
+  - FourthSic8Desc
+  - FifthSic8
+  - FifthSic8Desc
+  - SixthSic8
+  - SixthSic8Desc
+  - PriorYearEmployees
+  - PriorYearRevenue
