@@ -46,6 +46,7 @@ CREATE TABLE "Account" (
 	"ParentId" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
+INSERT INTO "Account" VALUES('Account-1','Wayne Industries','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','Pending','','','','','','','','','','');
 CREATE TABLE "DandBCompany" (
 	id VARCHAR(255) NOT NULL, 
 	"DunsNumber" VARCHAR(255), 
