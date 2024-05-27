@@ -1,116 +1,180 @@
 extract:
-  OperatingHours:
+  Lead:
     fields:
-    - Name
-    - Description
-    - TimeZone
-  DandBCompany:
-    fields:
-    - Name
-    - DunsNumber
+    - LastName
+    - FirstName
+    - Salutation
+    - Title
+    - Company
     - Street
     - City
     - State
     - PostalCode
     - Country
-    - GeocodeAccuracyStandard
+    - Latitude
+    - Longitude
+    - GeocodeAccuracy
     - Phone
+    - MobilePhone
     - Fax
-    - CountryAccessCode
-    - PublicIndicator
-    - StockSymbol
-    - StockExchange
-    - SalesVolume
-    - URL
-    - OutOfBusiness
-    - EmployeesTotal
-    - FipsMsaCode
-    - FipsMsaDesc
-    - TradeStyle1
-    - YearStarted
+    - Email
+    - Website
+    - Description
+    - LeadSource
+    - Status
+    - Industry
+    - Rating
+    - AnnualRevenue
+    - NumberOfEmployees
+    - HasOptedOutOfEmail
+    - IsConverted
+    - IsUnreadByOwner
+    - DoNotCall
+    - HasOptedOutOfFax
+    - Jigsaw
+    - CleanStatus
+    - CompanyDunsNumber
+    - Pronouns
+    - GenderIdentity
+    - DandbCompanyId
+    - IndividualId
+  Event:
+    fields:
+    - Subject
+    - Location
+    - IsAllDayEvent
+    - ActivityDateTime
+    - ActivityDate
+    - DurationInMinutes
+    - StartDateTime
+    - EndDateTime
+    - Description
+    - IsPrivate
+    - ShowAs
+    - IsRecurrence
+    - RecurrenceStartDateTime
+    - RecurrenceEndDateOnly
+    - RecurrenceTimeZoneSidKey
+    - RecurrenceType
+    - RecurrenceInterval
+    - RecurrenceDayOfWeekMask
+    - RecurrenceDayOfMonth
+    - RecurrenceInstance
+    - RecurrenceMonthOfYear
+    - ReminderDateTime
+    - IsReminderSet
+    - EventSubtype
+    - Recurrence2PatternText
+    - WhoId
+    - WhatId
+  Entitlement:
+    fields:
+    - Name
+    - Type
+    - StartDate
+    - EndDate
+    - IsPerIncident
+    - CasesPerEntitlement
+    - RemainingCases
+    - WorkOrdersPerEntitlement
+    - RemainingWorkOrders
+    - AccountId
+    - ServiceContractId
+    - ContractLineItemId
+    - AssetId
+    - SlaProcessId
+    - BusinessHoursId
+    - SvcApptBookingWindowsId
+    - AssetWarrantyId
+    - LocationId
+  Contact:
+    fields:
+    - LastName
+    - FirstName
+    - Salutation
+    - OtherStreet
+    - OtherCity
+    - OtherState
+    - OtherPostalCode
+    - OtherCountry
+    - OtherLatitude
+    - OtherLongitude
+    - OtherGeocodeAccuracy
     - MailingStreet
     - MailingCity
     - MailingState
     - MailingPostalCode
     - MailingCountry
+    - MailingLatitude
+    - MailingLongitude
     - MailingGeocodeAccuracy
-    - Latitude
-    - Longitude
-    - PrimarySic
-    - PrimarySicDesc
-    - SecondSic
-    - SecondSicDesc
-    - ThirdSic
-    - ThirdSicDesc
-    - FourthSic
-    - FourthSicDesc
-    - FifthSic
-    - FifthSicDesc
-    - SixthSic
-    - SixthSicDesc
-    - PrimaryNaics
-    - PrimaryNaicsDesc
-    - SecondNaics
-    - SecondNaicsDesc
-    - ThirdNaics
-    - ThirdNaicsDesc
-    - FourthNaics
-    - FourthNaicsDesc
-    - FifthNaics
-    - FifthNaicsDesc
-    - SixthNaics
-    - SixthNaicsDesc
-    - OwnOrRent
-    - EmployeesHere
-    - EmployeesHereReliability
-    - SalesVolumeReliability
-    - CurrencyCode
-    - LegalStatus
-    - GlobalUltimateTotalEmployees
-    - EmployeesTotalReliability
-    - MinorityOwned
-    - WomenOwned
-    - SmallBusiness
-    - MarketingSegmentationCluster
-    - ImportExportAgent
-    - Subsidiary
-    - TradeStyle2
-    - TradeStyle3
-    - TradeStyle4
-    - TradeStyle5
-    - NationalId
-    - NationalIdType
-    - UsTaxId
-    - GeoCodeAccuracy
-    - FamilyMembers
-    - MarketingPreScreen
-    - GlobalUltimateDunsNumber
-    - GlobalUltimateBusinessName
-    - ParentOrHqDunsNumber
-    - ParentOrHqBusinessName
-    - DomesticUltimateDunsNumber
-    - DomesticUltimateBusinessName
-    - LocationStatus
-    - CompanyCurrencyIsoCode
+    - Phone
+    - Fax
+    - MobilePhone
+    - HomePhone
+    - OtherPhone
+    - AssistantPhone
+    - Email
+    - Title
+    - Department
+    - AssistantName
+    - LeadSource
+    - Birthdate
     - Description
-    - FortuneRank
-    - IncludedInSnP500
-    - PremisesMeasure
-    - PremisesMeasureReliability
-    - PremisesMeasureUnit
-    - EmployeeQuantityGrowthRate
-    - SalesTurnoverGrowthRate
-    - PrimarySic8
-    - PrimarySic8Desc
-    - SecondSic8
-    - SecondSic8Desc
-    - ThirdSic8
-    - ThirdSic8Desc
-    - FourthSic8
-    - FourthSic8Desc
-    - FifthSic8
-    - FifthSic8Desc
-    - SixthSic8
-    - SixthSic8Desc
-    - PriorYearEmployees
-    - PriorYearRevenue
+    - HasOptedOutOfEmail
+    - HasOptedOutOfFax
+    - DoNotCall
+    - EmailBouncedReason
+    - EmailBouncedDate
+    - Jigsaw
+    - CleanStatus
+    - Pronouns
+    - GenderIdentity
+    - AccountId
+    - ReportsToId
+    - IndividualId
+  Account:
+    fields:
+    - Name
+    - Type
+    - BillingStreet
+    - BillingCity
+    - BillingState
+    - BillingPostalCode
+    - BillingCountry
+    - BillingLatitude
+    - BillingLongitude
+    - BillingGeocodeAccuracy
+    - ShippingStreet
+    - ShippingCity
+    - ShippingState
+    - ShippingPostalCode
+    - ShippingCountry
+    - ShippingLatitude
+    - ShippingLongitude
+    - ShippingGeocodeAccuracy
+    - Phone
+    - Fax
+    - AccountNumber
+    - Website
+    - Sic
+    - Industry
+    - AnnualRevenue
+    - NumberOfEmployees
+    - Ownership
+    - TickerSymbol
+    - Description
+    - Rating
+    - Site
+    - Jigsaw
+    - CleanStatus
+    - AccountSource
+    - DunsNumber
+    - Tradestyle
+    - NaicsCode
+    - NaicsDesc
+    - YearStarted
+    - SicDesc
+    - ParentId
+    - DandbCompanyId
+    - OperatingHoursId
