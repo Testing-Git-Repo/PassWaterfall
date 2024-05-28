@@ -22,37 +22,6 @@ Insert Individual:
   table: Individual
   fields:
   - LastName
-Insert ServiceContract:
-  sf_object: ServiceContract
-  table: ServiceContract
-  fields:
-  - Name
-Insert Asset:
-  sf_object: Asset
-  table: Asset
-  fields:
-  - Name
-Insert BusinessHours:
-  sf_object: BusinessHours
-  table: BusinessHours
-  fields:
-  - Name
-  - TimeZoneSidKey
-Insert Location:
-  sf_object: Location
-  table: Location
-  fields:
-  - Name
-Insert Pricebook2:
-  sf_object: Pricebook2
-  table: Pricebook2
-  fields:
-  - Name
-Insert Product2:
-  sf_object: Product2
-  table: Product2
-  fields:
-  - Name
 Insert ApptBundleConfig:
   sf_object: ApptBundleConfig
   table: ApptBundleConfig
@@ -64,6 +33,11 @@ Insert ApptBundlePolicy:
   fields:
   - Name
   - Priority
+Insert Asset:
+  sf_object: Asset
+  table: Asset
+  fields:
+  - Name
 Insert AttributeDefinition:
   sf_object: AttributeDefinition
   table: AttributeDefinition
@@ -113,6 +87,11 @@ Insert ListEmail:
   - FromAddress
   - Name
   - Status
+Insert Location:
+  sf_object: Location
+  table: Location
+  fields:
+  - Name
 Insert MaintenancePlan:
   sf_object: MaintenancePlan
   table: MaintenancePlan
@@ -138,6 +117,11 @@ Insert PrivacyRTBFRequest:
   table: PrivacyRTBFRequest
   fields:
   - JobRecord
+Insert Product2:
+  sf_object: Product2
+  table: Product2
+  fields:
+  - Name
 Insert ProductRequest:
   sf_object: ProductRequest
   table: ProductRequest
@@ -167,6 +151,11 @@ Insert ServiceAppointment:
   fields:
   - DueDate
   - EarliestStartTime
+Insert ServiceContract:
+  sf_object: ServiceContract
+  table: ServiceContract
+  fields:
+  - Name
 Insert ServiceCrew:
   sf_object: ServiceCrew
   table: ServiceCrew
@@ -257,6 +246,11 @@ Insert Refund:
   - ProcessingMode
   - Status
   - Type
+Insert Pricebook2:
+  sf_object: Pricebook2
+  table: Pricebook2
+  fields:
+  - Name
 Insert Holiday:
   sf_object: Holiday
   table: Holiday
@@ -393,30 +387,6 @@ Insert Account:
       table:
       - OperatingHours
       key_field: OperatingHoursId
-Insert AssetWarranty:
-  sf_object: AssetWarranty
-  table: AssetWarranty
-  fields:
-  - StartDate
-  lookups:
-    AssetId:
-      table:
-      - Asset
-      key_field: AssetId
-Insert PricebookEntry:
-  sf_object: PricebookEntry
-  table: PricebookEntry
-  fields:
-  - UnitPrice
-  lookups:
-    Pricebook2Id:
-      table:
-      - Pricebook2
-      key_field: Pricebook2Id
-    Product2Id:
-      table:
-      - Product2
-      key_field: Product2Id
 Insert ApptBundleAggrPolicy:
   sf_object: ApptBundleAggrPolicy
   table: ApptBundleAggrPolicy
@@ -492,6 +462,16 @@ Insert AssetRelationship:
       table:
       - Asset
       key_field: RelatedAssetId
+Insert AssetWarranty:
+  sf_object: AssetWarranty
+  table: AssetWarranty
+  fields:
+  - StartDate
+  lookups:
+    AssetId:
+      table:
+      - Asset
+      key_field: AssetId
 Insert AssignedResource:
   sf_object: AssignedResource
   table: AssignedResource
@@ -716,6 +696,20 @@ Insert ServiceTerritory:
       table:
       - OperatingHours
       key_field: OperatingHoursId
+Insert PricebookEntry:
+  sf_object: PricebookEntry
+  table: PricebookEntry
+  fields:
+  - UnitPrice
+  lookups:
+    Pricebook2Id:
+      table:
+      - Pricebook2
+      key_field: Pricebook2Id
+    Product2Id:
+      table:
+      - Product2
+      key_field: Product2Id
 Insert CommSubscriptionChannelType:
   sf_object: CommSubscriptionChannelType
   table: CommSubscriptionChannelType
@@ -789,21 +783,6 @@ Insert Contact:
       table:
       - Individual
       key_field: IndividualId
-Insert ContractLineItem:
-  sf_object: ContractLineItem
-  table: ContractLineItem
-  fields:
-  - Quantity
-  - UnitPrice
-  lookups:
-    PricebookEntryId:
-      table:
-      - PricebookEntry
-      key_field: PricebookEntryId
-    ServiceContractId:
-      table:
-      - ServiceContract
-      key_field: ServiceContractId
 Insert ApptBundleAggrDurDnscale:
   sf_object: ApptBundleAggrDurDnscale
   table: ApptBundleAggrDurDnscale
@@ -834,6 +813,31 @@ Insert CommSubscriptionConsent:
 Insert Contract:
   sf_object: Contract
   table: Contract
+  lookups:
+    AccountId:
+      table:
+      - Account
+      key_field: AccountId
+Insert ContractLineItem:
+  sf_object: ContractLineItem
+  table: ContractLineItem
+  fields:
+  - Quantity
+  - UnitPrice
+  lookups:
+    PricebookEntryId:
+      table:
+      - PricebookEntry
+      key_field: PricebookEntryId
+    ServiceContractId:
+      table:
+      - ServiceContract
+      key_field: ServiceContractId
+Insert Entitlement:
+  sf_object: Entitlement
+  table: Entitlement
+  fields:
+  - Name
   lookups:
     AccountId:
       table:
@@ -884,52 +888,6 @@ Insert OrderItem:
       table:
       - PricebookEntry
       key_field: PricebookEntryId
-Insert Entitlement:
-  sf_object: Entitlement
-  table: Entitlement
-  fields:
-  - Name
-  - Type
-  - StartDate
-  - EndDate
-  - IsPerIncident
-  - CasesPerEntitlement
-  - RemainingCases
-  - WorkOrdersPerEntitlement
-  - RemainingWorkOrders
-  lookups:
-    AccountId:
-      table:
-      - Account
-      key_field: AccountId
-    ServiceContractId:
-      table:
-      - ServiceContract
-      key_field: ServiceContractId
-    ContractLineItemId:
-      table:
-      - ContractLineItem
-      key_field: ContractLineItemId
-    AssetId:
-      table:
-      - Asset
-      key_field: AssetId
-    BusinessHoursId:
-      table:
-      - BusinessHours
-      key_field: BusinessHoursId
-    SvcApptBookingWindowsId:
-      table:
-      - OperatingHours
-      key_field: SvcApptBookingWindowsId
-    AssetWarrantyId:
-      table:
-      - AssetWarranty
-      key_field: AssetWarrantyId
-    LocationId:
-      table:
-      - Location
-      key_field: LocationId
 Insert ProcessException:
   sf_object: ProcessException
   table: ProcessException

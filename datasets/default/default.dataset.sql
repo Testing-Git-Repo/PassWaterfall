@@ -148,12 +148,6 @@ CREATE TABLE "AttributePicklistValue" (
 	"PicklistId" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-CREATE TABLE "BusinessHours" (
-	id VARCHAR(255) NOT NULL, 
-	"Name" VARCHAR(255), 
-	"TimeZoneSidKey" VARCHAR(255), 
-	PRIMARY KEY (id)
-);
 CREATE TABLE "Campaign" (
 	id VARCHAR(255) NOT NULL, 
 	"Name" VARCHAR(255), 
@@ -278,22 +272,7 @@ CREATE TABLE "EngagementChannelType" (
 CREATE TABLE "Entitlement" (
 	id VARCHAR(255) NOT NULL, 
 	"Name" VARCHAR(255), 
-	"Type" VARCHAR(255), 
-	"StartDate" VARCHAR(255), 
-	"EndDate" VARCHAR(255), 
-	"IsPerIncident" VARCHAR(255), 
-	"CasesPerEntitlement" VARCHAR(255), 
-	"RemainingCases" VARCHAR(255), 
-	"WorkOrdersPerEntitlement" VARCHAR(255), 
-	"RemainingWorkOrders" VARCHAR(255), 
 	"AccountId" VARCHAR(255), 
-	"AssetId" VARCHAR(255), 
-	"AssetWarrantyId" VARCHAR(255), 
-	"BusinessHoursId" VARCHAR(255), 
-	"ContractLineItemId" VARCHAR(255), 
-	"LocationId" VARCHAR(255), 
-	"ServiceContractId" VARCHAR(255), 
-	"SvcApptBookingWindowsId" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
 CREATE TABLE "Event" (
