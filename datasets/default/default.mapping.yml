@@ -5,73 +5,135 @@
 # .load.yml file and re-capturing:
 #
 #  https://cumulusci.readthedocs.io/en/stable/data.html#extracting-and-loading-sample-datasets
+Insert Account:
+  sf_object: Account
+  table: Account
+  fields:
+  - Name
+Insert Individual:
+  sf_object: Individual
+  table: Individual
+  fields:
+  - LastName
 Insert DandBCompany:
   sf_object: DandBCompany
   table: DandBCompany
   fields:
   - DunsNumber
   - Name
-Insert OperatingHours:
-  sf_object: OperatingHours
-  table: OperatingHours
+Insert Lead:
+  sf_object: Lead
+  table: Lead
   fields:
-  - Name
-  - TimeZone
-Insert Account:
-  sf_object: Account
-  table: Account
-  fields:
-  - Name
-  - Type
-  - BillingStreet
-  - BillingCity
-  - BillingState
-  - BillingPostalCode
-  - BillingCountry
-  - BillingLatitude
-  - BillingLongitude
-  - BillingGeocodeAccuracy
-  - ShippingStreet
-  - ShippingCity
-  - ShippingState
-  - ShippingPostalCode
-  - ShippingCountry
-  - ShippingLatitude
-  - ShippingLongitude
-  - ShippingGeocodeAccuracy
+  - LastName
+  - FirstName
+  - Salutation
+  - Title
+  - Company
+  - Street
+  - City
+  - State
+  - PostalCode
+  - Country
+  - Latitude
+  - Longitude
+  - GeocodeAccuracy
   - Phone
+  - MobilePhone
   - Fax
-  - AccountNumber
+  - Email
   - Website
-  - Sic
+  - Description
+  - LeadSource
+  - Status
   - Industry
+  - Rating
   - AnnualRevenue
   - NumberOfEmployees
-  - Ownership
-  - TickerSymbol
-  - Description
-  - Rating
-  - Site
+  - HasOptedOutOfEmail
+  - IsConverted
+  - IsUnreadByOwner
+  - DoNotCall
+  - HasOptedOutOfFax
   - Jigsaw
   - CleanStatus
-  - AccountSource
-  - DunsNumber
-  - Tradestyle
-  - NaicsCode
-  - NaicsDesc
-  - YearStarted
-  - SicDesc
+  - CompanyDunsNumber
+  - Pronouns
+  - GenderIdentity
   lookups:
-    ParentId:
-      table:
-      - Account
-      key_field: ParentId
-      after: Insert Account
     DandbCompanyId:
       table:
       - DandBCompany
       key_field: DandbCompanyId
-    OperatingHoursId:
+    IndividualId:
       table:
-      - OperatingHours
-      key_field: OperatingHoursId
+      - Individual
+      key_field: IndividualId
+Insert Contact:
+  sf_object: Contact
+  table: Contact
+  fields:
+  - LastName
+  - FirstName
+  - Salutation
+  - OtherStreet
+  - OtherCity
+  - OtherState
+  - OtherPostalCode
+  - OtherCountry
+  - OtherLatitude
+  - OtherLongitude
+  - OtherGeocodeAccuracy
+  - MailingStreet
+  - MailingCity
+  - MailingState
+  - MailingPostalCode
+  - MailingCountry
+  - MailingLatitude
+  - MailingLongitude
+  - MailingGeocodeAccuracy
+  - Phone
+  - Fax
+  - MobilePhone
+  - HomePhone
+  - OtherPhone
+  - AssistantPhone
+  - Email
+  - Title
+  - Department
+  - AssistantName
+  - LeadSource
+  - Birthdate
+  - Description
+  - HasOptedOutOfEmail
+  - HasOptedOutOfFax
+  - DoNotCall
+  - EmailBouncedReason
+  - EmailBouncedDate
+  - Jigsaw
+  - CleanStatus
+  - Pronouns
+  - GenderIdentity
+  lookups:
+    AccountId:
+      table:
+      - Account
+      key_field: AccountId
+    ReportsToId:
+      table:
+      - Contact
+      key_field: ReportsToId
+      after: Insert Contact
+    IndividualId:
+      table:
+      - Individual
+      key_field: IndividualId
+Insert Event:
+  sf_object: Event
+  table: Event
+  lookups:
+    WhoId:
+      table:
+      - Contact
+      - Lead
+      key_field: WhoId
